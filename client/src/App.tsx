@@ -1,8 +1,12 @@
 import React from 'react'
-import './App.css'
+import * as Pages from './pages'
 
 function App() {
-  return <div className='App'></div>
+  return (
+    <div className='smart-duck'>
+      <Pages.Homepage />
+    </div>
+  )
 }
 
 export default App
