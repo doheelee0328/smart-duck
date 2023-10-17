@@ -2,7 +2,7 @@ import React from 'react'
 import '../../scss/main.scss'
 
 const Character = () => {
-  return <div>character</div>
+  return <div className=''>character</div>
 }
 
 export default Character
