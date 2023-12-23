@@ -4,7 +4,7 @@ import Duck from '../../images/Duck.png'
 import { Link } from 'react-router-dom'
 import '../../scss/main.scss'
 
-const homepage = () => {
+const Homepage = () => {
   return (
     <div className='smart-duck-container'>
       <h1 className='welcome-message'>Welcome To SmartDuck</h1>
@@ -22,4 +22,4 @@ const homepage = () => {
   )
 }
 
-export default homepage
+export default Homepage
