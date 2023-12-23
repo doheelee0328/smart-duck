@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 const Homepage = lazy(() => import('./pages/homepage/Homepage.tsx'))
 const Character = lazy(() => import('./pages/character/Character.tsx'))
 const NotFound = lazy(() => import('./pages/notFound/NotFound.tsx'))
+const Login = lazy(() => import('./pages/login/Login.tsx'))
 // since lazy loading asynchronous its a good practice to use suspense
 // to show that the page is loading.
 
@@ -37,6 +38,14 @@ function App() {
           element={
             <Suspense fallback={<Loading />}>
               <NotFound />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/login'
+          element={
+            <Suspense fallback={<Loading />}>
+              <Login />
             </Suspense>
           }
         />

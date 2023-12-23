@@ -7,9 +7,28 @@
   .character-heading {
     color: $white;
     padding-top: 4rem;
+    font-size: 2.2rem;
   }
 
-  .duck-image {
-    width: 10%;
+  .image-container {
+    @include flexbox(row, 0px);
+    .duck-image {
+      padding-top: 1rem;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  .button-container {
+    @include flexbox(row, 2rem);
+    width: 100%;
+
+    .character-button {
+      width: 15%;
+      height: 6vh;
+      border-radius: 1rem;
+      cursor: pointer;
+      background: #ffffff;
+    }
   }
 }
