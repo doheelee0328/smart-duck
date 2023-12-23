@@ -1,2 +1,15 @@
 @import 'theme.scss';
 @import 'variables.scss';
+
+.character-container {
+  @include flexbox(column, 2rem);
+
+  .character-heading {
+    color: $white;
+    padding-top: 4rem;
+  }
+
+  .duck-image {
+    width: 10%;
+  }
+}
