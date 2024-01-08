@@ -1,19 +1,24 @@
 import React, { useRef, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeCharacter } from '../../slices/character.ts'
 import '../../scss/main.scss'
 
 const Login = () => {
   const inputRef = useRef<HTMLInputElement>(null)
+  const dispatch = useDispatch()
+  const selectedCharacter = useSelector(
+    (state: any) => state.characterSlice.character
+  )
 
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus()
     }
-  }, [])
-
-  const selectedCharacter = useSelector(
-    (state: any) => state.characterSlice.character
-  )
+    const storedCharacter = localStorage.getItem('character-image')
+    if (storedCharacter) {
+      dispatch(changeCharacter(storedCharacter))
+    }
+  }, [dispatch, selectedCharacter])
 
   return (
     <div className='login-container'>

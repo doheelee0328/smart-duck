@@ -14,6 +14,7 @@ const CharacterImages = ({ image, alt }: CharacterProps) => {
   const dispatch = useDispatch()
   const selectCharacterHandler = (selectedCharacter: any) => {
     dispatch(changeCharacter(selectedCharacter))
+    localStorage.setItem('character-image', selectedCharacter)
   }
 
   return (
