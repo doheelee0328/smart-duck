@@ -12,8 +12,11 @@ const characterSlice = createSlice({
   name: 'character',
   initialState: initialCounterState,
   reducers: {
-    // changeCharacter(state) {
-    //   state.character =
-    // }
+    changeCharacter(state, action) {
+      state.character = action.payload
+    },
   },
 })
+
+export const { changeCharacter } = characterSlice.actions
+export default characterSlice.reducer

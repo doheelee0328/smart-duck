@@ -2,17 +2,31 @@ import React from 'react'
 import '../../scss/main.scss'
 import Duck1 from '../../images/duck1.png'
 import { useNavigate } from 'react-router-dom'
+import { changeCharacter } from '../../slices/character.ts'
+import { useDispatch } from 'react-redux'
 
 interface CharacterProps {
   image: any
   alt: string
 }
 
-const CharacterImages = ({ image, alt }: CharacterProps) => (
-  <div className='image-container'>
-    <img src={image} alt={alt} className='duck-image' />
-  </div>
-)
+const CharacterImages = ({ image, alt }: CharacterProps) => {
+  const dispatch = useDispatch()
+  const selectCharacterHandler = (selectedCharacter: any) => {
+    dispatch(changeCharacter(selectedCharacter))
+  }
+
+  return (
+    <div className='image-container'>
+      <img
+        src={image}
+        alt={alt}
+        className='duck-image'
+        onClick={() => selectCharacterHandler(image)}
+      />
+    </div>
+  )
+}
 
 const Character = () => {
   const navigate = useNavigate()

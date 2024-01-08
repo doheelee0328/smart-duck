@@ -1,0 +1,13 @@
+@import 'theme.scss';
+@import 'variables.scss';
+
+.login-container {
+  height: 100vh;
+  @include flexbox(column, 1.5rem);
+  .input {
+    width: 25%;
+    height: 40px;
+    background: $white;
+    border-radius: 15px;
+  }
+}

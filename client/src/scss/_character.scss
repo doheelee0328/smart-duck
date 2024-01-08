@@ -18,17 +18,22 @@
       margin: 0 auto;
     }
   }
+}
 
-  .button-container {
-    @include flexbox(row, 2rem);
-    width: 100%;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 
-    .character-button {
-      width: 15%;
-      height: 6vh;
-      border-radius: 1rem;
-      cursor: pointer;
-      background: #ffffff;
-    }
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  .character-button {
+    width: 15%;
+    height: 6vh;
+    border-radius: 1rem;
+    cursor: pointer;
+    background: #ffffff;
   }
 }
